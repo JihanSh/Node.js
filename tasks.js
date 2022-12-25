@@ -62,7 +62,11 @@ function unknownCommand(c) {
 function hello() {
   console.log("hello!");
 }
-
+/**
+ * Says help, lists all the available commands
+ *
+ * @returns {void}
+ */
 function help() {
   console.log("All Possible Commands:\nhello,\nhelp,\nquit.");
 }
