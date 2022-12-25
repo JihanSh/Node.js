@@ -68,7 +68,7 @@ function hello() {
  * @returns {void}
  */
 function help() {
-  console.log("All Possible Commands:\nhello,\nhelp,\nquit.");
+  console.log("All Possible Commands:\nhello:says hello to the user,\nhelp:lists the available commands,\nquit:quits the application.");
 }
 
 /**
