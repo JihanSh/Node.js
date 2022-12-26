@@ -86,6 +86,15 @@ function help() {
     "help:help you understand all the commands"
   );
 }
+function list(){
+  var tasks=[
+    'task 1:testing the software',
+    'task 2:little steps',
+    'task 3:string manipulation',
+    'task 4:additional commands'
+  ]
+  
+}
 
 /**
  * Exits the application
