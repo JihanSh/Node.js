@@ -21,9 +21,9 @@ function startApp(name) {
  * This function receives the input sent by the user.
  *
  * For example, if the user entered
- * ```
+ *
  * node tasks.js batata
- * ```
+ *
  *
  * The text received would be "batata"
  * This function  then directs to other functions
@@ -32,12 +32,13 @@ function startApp(name) {
  * @returns {void}
  */
 function onDataReceived(text) {
-  if (text === "help\n") {
-    help();
-  } else if (text === "hello\n") {
-    hello();
-  } else if (text === "quit\n" || "exit\n") {
+  var createArray = text.split(" ");
+  if (text === "quit\n" || text === "exit\n") {
     quit();
+  } else if (createArray[0] === "hello" || text === "hello\n") {
+    hello(text);
+  } else if (text === "help\n") {
+    help();
   } else {
     unknownCommand(text);
   }
@@ -59,16 +60,13 @@ function unknownCommand(c) {
  *
  * @returns {void}
  */
-function hello() {
-  console.log("hello!");
-}
-/**
- * Says help, lists all the available commands
- *
- * @returns {void}
- */
-function help() {
-  console.log("All Possible Commands:\nhello:says hello to the user,\nhelp:lists the available commands,\nquit:quits the application.");
+
+function hello(t) {
+  if (t === "hello\n") {
+    console.log(t.replace("hello", "hello!"));
+  } else {
+    console.log(t.trim() + "!" + "\n");
+  }
 }
 
 /**
@@ -76,10 +74,28 @@ function help() {
  *
  * @returns {void}
  */
+/**
+ * help users to check available command
+ */
+function help() {
+  console.log(
+    "try using this command :\n",
+    "hello\n",
+    "quit or exit\n",
+    "help"
+  );
+}
+
+/**
+ * Exits the application
+ *
+ * @returns {void}
+ */
+
 function quit() {
   console.log("Quitting now, goodbye!");
   process.exit();
 }
 
 // The following line starts the application
-startApp(" Jihan Shamas, the noob");
+startApp("Jihan Shamas");

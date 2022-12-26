@@ -87,20 +87,20 @@ Now, we're going to grow the possibilities of the app a little.
 
 *note*: don't forget to commit after **each** step
 
-1. Make the "hello" command able to take an argument. That is, if I write "hello x", the answer should be "hello x!". If I write "hello batata", it should tell me "hello batata!". 
+   1. Make the "hello" command able to take an argument. That is, if I write "hello x", the answer should be "hello x!". If I write "hello batata", it should tell me "hello batata!". 
   - <kbd>tip</kbd>: the function `onDataReceived` receives everything the user writes. Put a `console.log` at the top of the function and then test writing things in the running software to see how that works
   - <kbd>tip</kbd>: You're going to want to:
     - clean the text from the `endline` character `\n`, to make your life easier. Look into the string's `replace` method.
     - remove any additional space, look into the string's `trim` method.
   - split your string into words. Look into string's `split` method.  - the first word is your comman
   - if you feel things are getting complex, try doing a small example of what you're trying to achieve in isolation, in a new file or your browser's console.
-2. commit ("extended hello")  
-3. But, make it so if I write "hello" without anything, I still get "hello!". That is, if I write:
+1. commit ("extended hello")  
+2. But, make it so if I write "hello" without anything, I still get "hello!". That is, if I write:
   - "hello world", I should get "hello world!"
   - but if I write "hello", I should *not* get a space ("hello !"). I should get "hello!"
-4. commit ("handled empty state")  
-5. Now that you've expanded the possibility of the "hello" function, update the text of "help" accordingly 
-6. commit ("documented extended hello")  
+1. commit ("handled empty state")  
+2. Now that you've expanded the possibility of the "hello" function, update the text of "help" accordingly 
+3. commit ("documented extended hello")  
 
 If you haven't yet, now would be a good moment to push
 
