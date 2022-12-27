@@ -39,10 +39,18 @@ function onDataReceived(text) {
     hello(text);
   } else if (text === "help\n") {
     help();
-  } else {
+  } 
+ 
+  else if(createArray[0]==="add"){
+add(text,tasks);  
+  }else if(text==="add\n"){
+    error()
+  }
+
+    else 
     unknownCommand(text);
   }
-}
+
 
 /**
  * prints "unknown command"
@@ -86,16 +94,24 @@ function help() {
     "help:help you understand all the commands"
   );
 }
-function list(){
-  var tasks=[
-    'task 1:testing the software',
-    'task 2:little steps',
-    'task 3:string manipulation',
-    'task 4:additional commands'
-  ]
-  
-}
 
+  var tasks=[
+    'task 1:testing the software\n',
+    'task 2:little steps\n',
+    'task 3:string manipulation\n',
+    'task 4:additional commands\n',
+  ]
+
+function add(item, tasks) {
+  var itemN = item.substr('task 5:', item.length);
+  tasks.push(itemN.trim());
+  console.log(tasks+ '\n'+
+    "task 5:Task created successfully\n'write list to list all your tasks' \n"
+  );
+}
+function error() {
+  console.log("\n----ERROR TRY AGAIN----\n");
+}
 /**
  * Exits the application
  *
