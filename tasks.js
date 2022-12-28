@@ -46,10 +46,13 @@ add(text,tasks);
   }else if(text==="add\n"){
     error()
   }
+else if(createArray[0]==="remove\n"|| "remove"){
+  remove(text,tasks)
+}
 
     else 
     unknownCommand(text);
-  }
+}
 
 
 /**
@@ -96,10 +99,10 @@ function help() {
 }
 
   var tasks=[
-    'task 1:testing the software\n',
-    'task 2:little steps\n',
-    'task 3:string manipulation\n',
-    'task 4:additional commands\n',
+    'task 1:testing the software,\n',
+    'task 2:little steps,\n',
+    'task 3:string manipulation,\n',
+    'task 4:additional commands,\n',
   ]
 
 function add(item, tasks) {
@@ -111,6 +114,19 @@ function add(item, tasks) {
 }
 function error() {
   console.log("\n----ERROR TRY AGAIN----\n");
+}
+function remove(item, tasks) {
+  var arr = item.split(" ");
+  if (item === "remove\n") {
+    var task = tasks.pop();
+    console.log("----" + task + " removed, check your list----\n");
+  } else if (arr[1] > tasks.length) {
+    console.log("your list has only " + tasks.length + " tasks");
+    error();
+  } else {
+    task = tasks.splice(arr[1] - 1, 1);
+    console.log("----item " + arr[1] + " removed, check your list---\n");
+  }
 }
 /**
  * Exits the application

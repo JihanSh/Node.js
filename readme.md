@@ -120,10 +120,10 @@ We're going to add three functions: `add`, `remove`, and `list`.
   - `remove` (without anything) should remove the *last* task
   - `remove 1` should remove the FIRST element of the list
   - `remove 2` should remove the SECOND element of the list
-  - <kbd>tip</kbd>: look into Javascript's `splice` command
-6. commit ("remove")  
-7. document those new commands in the text of the "help" command
-8. commit ("documented list, add, remove"). Congrats! You're close to a full CRUD app!  
+    - <kbd>tip</kbd>: look into Javascript's `splice` command
+1. commit ("remove")  
+2. document those new commands in the text of the "help" command
+3. commit ("documented list, add, remove"). Congrats! You're close to a full CRUD app!  
 
 If you haven't yet, now would be a good moment to push
 
