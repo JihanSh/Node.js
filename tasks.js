@@ -49,6 +49,10 @@ function onDataReceived(text) {
     error();
   } else if (createArray[0] === "edit") {
     edit(text, tasks);
+  } else if (createArray[0] === "check") {
+    check(text, tasks);
+  } else if (createArray[0] === "uncheck") {
+    uncheck(text, tasks);
   } else {
     unknownCommand(text);
   }
@@ -95,6 +99,9 @@ function help() {
     "quit or exit: quits the application\n",
     "add:allows to add a task\n",
     "remove || remove n:allows to remove the last task || remove a specified task\n",
+    "edit:edit the task with a text",
+    "check:add a done/undone (checked/unchecked) feature to our task list.",
+    "uncheck:does the opposite of `check`",
     "help:help you understand all the commands\n"
   );
 }
@@ -114,6 +121,7 @@ var tasks = [
   "Task 1: Learn Node basics",
   "Task 2: Edit node.js task",
   "Task 3: Create Help Function",
+  "Task 4: Check if tasks are done [✓]",
 ];
 function add(item, tasks) {
   var itemN = item.substr(3, item.length);
@@ -161,6 +169,27 @@ function edit(item, tasks) {
 
 function error() {
   console.log("\n----ERROR TRY AGAIN----\n");
+}
+function check(item, tasks) {
+  //console.log(tasks[1]+"[✓]");
+  var arr = item.split(" ");
+  if (arr[1] < tasks.length) {
+    var reserve = tasks[arr[1] - 1];
+    var task = tasks.splice(arr[1] - 1, 1, reserve + "[✓]");
+    console.log("----some tasks are done, please check your list----");
+  } else {
+    console.log(tasks[arr[1]]);
+  }
+}
+function uncheck(item, tasks) {
+  var arr = item.split(" ");
+  if (arr[1] < tasks.length) {
+    var reserve = tasks[arr[1] - 1];
+    var task = tasks.splice(arr[1] - 1, 1, reserve.replace("[✓]", ""));
+    console.log("----task unmarked----");
+  } else {
+    console.log("----invalid task number----");
+  }
 }
 
 // The following line starts the application
